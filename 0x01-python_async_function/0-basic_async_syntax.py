@@ -4,13 +4,11 @@
 Module utilises asyncio to run coroutines
 """
 
-import time
 import asyncio
 import random
-from typing import Union
 
 
-async def wait_random(max_delay: int = 10) -> Union[float, int]:
+async def wait_random(max_delay: int = 10) -> float:
     """
     Asynchronous coroutine that waits for a random delay between 0 n max_delay
 
