@@ -20,8 +20,6 @@ async def wait_random(max_delay: int = 10) -> Union[float, int]:
     Returns:
         Union[float, int]: The actual time waited in seconds.
     """
-    wait_time: int = random.randint(0, max_delay)
-    start_time: float = time.time()
-    await asyncio.sleep(wait_time)
-    end_time: float = time.time()
-    return end_time - start_time
+    time_delayed: float = random.uniform(0, max_delay)
+    await asyncio.sleep(time_delayed)
+    return time_delayed
