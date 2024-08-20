@@ -6,10 +6,10 @@ Module defines coroutine looping 10 times yielding a random no between 1 and 10
 
 import asyncio
 import random
-from typing import Generator
+from typing import AsyncGenerator
 
 
-async def async_generator() -> Generator[float, None, None]:
+async def async_generator() -> AsyncGenerator[float, None]:
     """
     An asynchronous generator that yields a random number between 1 and 10.
 
