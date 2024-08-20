@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 """
 Module defines coroutine looping 10 times yielding a random no between 1 and 10
