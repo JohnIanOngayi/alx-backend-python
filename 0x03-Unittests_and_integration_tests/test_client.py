@@ -27,6 +27,12 @@ class TestGithubOrgClient(unittest.TestCase):
                 f"https://api.github.com/orgs/{input}"
                 )
 
+    def test_public_repos_url(self):
+        """Test client.GithubOrgClient.public_repos"""
+        with patch("client.GithubOrgClient._public_repos_url", "Success"):
+            test_obj = GithubOrgClient("google")
+            self.assertEqual(test_obj._public_repos_url, "Success")
+
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
