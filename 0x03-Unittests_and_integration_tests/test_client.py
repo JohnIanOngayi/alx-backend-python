@@ -48,6 +48,17 @@ class TestGithubOrgClient(unittest.TestCase):
                 f"https://api.github.com/orgs/google"
                 )
 
+    @parameterized.expand(
+        [
+            ({"license": {"key": "my_license"}}, "my_license", True),
+            ({"license": {"key": "other_license"}}, "my_license", False),
+        ]
+    )
+    def test_has_license(self, repo, license_key, result):
+        """Test GithubOrgClient.has_license"""
+        test_obj = GithubOrgClient("google")
+        self.assertEqual(test_obj.has_license(repo, license_key), result)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
